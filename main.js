@@ -27,18 +27,18 @@ onepagescroll('.pages',{
   
   resizeObserver.observe(document.body)
   const modalcontainer = document.querySelector(".modalcontainer")
-  document.getElementById("openmodal").onclick = ()=>{
+  document.getElementById("openmodal").addEventListener("click", ()=>{
     modalcontainer.classList.toggle("visible")
-  }
+  })
   
-modalcontainer.querySelector(".modalwall").onclick = () => {
+modalcontainer.querySelector(".modalwall").addEventListener("click", () => {
   modalcontainer.classList.toggle("visible");
-};
+})
 
-  modalcontainer.querySelector(".cross").onclick = ()=>{
+  modalcontainer.querySelector(".cross").addEventListener("click",()=>{
 
     modalcontainer.classList.toggle("visible")
-  }
+  })
 const menu = document.querySelector('.mobilemenu > div');
 menu.addEventListener('click', () => {
   
@@ -51,7 +51,7 @@ document.querySelector(".pages").setAttribute("style","transition: transform 700
 let activetab = 0;
 const tabsButtons = document.querySelectorAll(".techtabs p");
 tabsButtons.forEach(elem => {
-  elem.onclick = ()=>{
+  elem..addEventListener("click",()=>{
     const nowIndex = elem.dataset.tabindex
     if(nowIndex !== activetab){
 document.querySelector(".activetab").classList.remove("activetab");
@@ -61,12 +61,12 @@ document.querySelector(`.techtabs .active`).classList.remove("active")
 document.querySelector(`p[data-tabindex="${nowIndex}"]`).classList.add("active")
     activetab = elem.dataset.tabindex;
     }
-  }
+  })
 })
 
 const modalbuttons = document.querySelectorAll(".modalbuttons button");
 const modalpages = document.querySelector(".modalpages > div")
-modalbuttons[0].onclick = ()=>{
+modalbuttons[0].addEventListener("click",()=>{
   if(!modalbuttons[0].classList.contains("active")){
     
     modalpages.style.transform = "translateX(0)"
@@ -75,8 +75,8 @@ modalbuttons[0].onclick = ()=>{
     
     modalbuttons[1].classList.remove("active")
   }
-}
-modalbuttons[1].onclick = ()=>{
+})
+modalbuttons[1].addEventListener("click",()=>{
   if(!modalbuttons[1].classList.contains("active")){
     
     modalpages.style.transform = "translateX(calc(-50% + 30px))"
@@ -85,6 +85,7 @@ modalbuttons[1].onclick = ()=>{
     
     modalbuttons[0].classList.remove("active")
   }
-}}
+})
+				 }
 catch(err){
 	alert(err);}
