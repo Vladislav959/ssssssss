@@ -22,8 +22,7 @@
     )
     const modalHandler = ()=>{
       if(modalcontainer.classList.contains("visible")){
-        console.log("sjsjs")
-        if(was){
+        if(was || (window.innerHeight >= 700 && window.innerWidth >= 1000)){
         onepagescroll('.pages',{
           pageContainer: 'section',     
           animationType: 'ease-in-out', 
