@@ -24,30 +24,26 @@
      
   }
     )
-    
+    const modalHandler = ()=>{
+      if(modalcontainer.classList.contains("visible")){
+        
+      window.addEventListener('wheel',onScrollEventHandler);
+      }
+      else{
+        
+      window.removeEventListener('wheel',onScrollEventHandler);
+      }
+      modalcontainer.classList.toggle("visible")
+    }
     resizeObserver.observe(document.body)
     const modalcontainer = document.querySelector(".modalcontainer")
-    document.getElementById("openmodal").addEventListener("click", ()=>{
-      modalcontainer.classList.toggle("visible")
-    })
-    document.getElementById("openmodal").addEventListener("touchend", ()=>{
-      modalcontainer.classList.toggle("visible")
-    })
-  modalcontainer.querySelector(".modalwall").addEventListener("click", () => {
-    modalcontainer.classList.toggle("visible");
-  })
+    document.getElementById("openmodal").addEventListener("click", modalHandler)
+    document.getElementById("openmodal").addEventListener("touchend", modalHandler)
+  modalcontainer.querySelector(".modalwall").addEventListener("click", modalHandler)
   
-  modalcontainer.querySelector(".modalwall").addEventListener("touchend", () => {
-    modalcontainer.classList.toggle("visible");
-  })
-    modalcontainer.querySelector(".cross").addEventListener("click",()=>{
-  
-      modalcontainer.classList.toggle("visible")
-    })
-    modalcontainer.querySelector(".cross").addEventListener("touchend",()=>{
-  
-      modalcontainer.classList.toggle("visible")
-    })
+  modalcontainer.querySelector(".modalwall").addEventListener("touchend", modalHandler)
+    modalcontainer.querySelector(".cross").addEventListener("click",modalHandler)
+    modalcontainer.querySelector(".cross").addEventListener("touchend",modalHandler)
   const menu = document.querySelector('.mobilemenu > div');
   menu.addEventListener('click', () => {
     
