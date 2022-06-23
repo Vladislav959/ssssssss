@@ -1,0 +1,226 @@
+.roundedbox {
+  padding: 14px 24px;
+  border-radius: 100px;
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 2px solid var(--brand);
+}
+
+.roundedbox p {
+  color: var(--brand);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+section {
+  height: initial;
+}
+
+.page {
+  margin-top: 150px;
+}
+
+.card {
+  width: calc(100% / 3 - 11px);
+  margin: 5.5px;
+  background: #090c0f;
+  border: 1px solid #2b2b2b;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.twocards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card50 {
+  width: calc(50% - 11px);
+}
+
+.card40 {
+  width: calc(40% - 11px);
+}
+
+.card60 {
+  width: calc(60% - 11px);
+}
+
+.card p:first-of-type {
+  color: #fff;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 39px;
+}
+
+.smallheading {
+  width: 460px;
+  margin: 0 auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.smallheading h2,
+.smallheading p {
+  text-align: center;
+}
+
+.smallheading h2 {
+  margin-bottom: 12px;
+}
+
+.payments {
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 46px;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+.paymentcards {
+  max-width: 1160px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 65px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.paymentcards > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 5px;
+  margin: 10px 7.5px;
+  width: 275px;
+  padding: 17px 0;
+}
+
+.paymentcards > div img {
+  width: 40px;
+  height: 40px;
+}
+
+.howwework > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.page h1 {
+  margin-bottom: 80px;
+}
+
+@media (max-width: 1600px) {
+  body {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1000px) {
+  .smallheading {
+    width: 100%;
+  }
+}
+@media (max-width: 840px) {
+  .howwework > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .howwework .card {
+    width: calc(100% - 11px);
+  }
+}
+@media (max-width: 520px) {
+  .card p:first-of-type {
+    font-size: 1em;
+    line-height: 20px;
+  }
+
+  .card p:last-of-type {
+    font-size: 0.8em;
+    line-height: 20px;
+  }
+}
+@media (max-width: 452px) {
+  h2 {
+    font-size: 30px;
+  }
+
+  .card {
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .logocontainer p {
+    margin: 0;
+  }
+}
+@media (max-width: 540px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 420px) {
+  .paymentcards {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .card40,
+.card50,
+.card60 {
+    width: calc(100% - 11px);
+  }
+
+  .twocards {
+    display: block;
+  }
+}
+/*# sourceMappingURL=mainfaq.css.map */
+
+/*# sourceMappingURL=main.css.map */
