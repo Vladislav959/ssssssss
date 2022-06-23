@@ -1,3 +1,52 @@
+window.onceWheel = function onceWheel(scrollDownHandler, scrolUpHandler) {
+	let wheelPower = 0
+	let wheelLock = false
+	let wheelTimeStamp = 0
+	let wheelLockTimer = null
+	const deltaThreshold = 50
+	const noiseThreshold = 20
+	const wheelEvent =
+	  'onwheel' in document
+		? 'wheel'
+		: 'onmousewheel' in document
+		? 'mousewheel'
+		: 'DOMMouseScroll'
+  
+	document.addEventListener(wheelEvent, event => {
+	  const delta = event.wheelDelta !== undefined ? event.wheelDelta : event.deltaY * -1
+	  const absDelta = Math.abs(delta)
+  
+	  if (absDelta < noiseThreshold) return
+	  if (event.timeStamp - wheelTimeStamp < 300 && wheelLock) return
+  
+	  wheelTimeStamp = event.timeStamp
+  
+	  if (wheelPower < absDelta && !wheelLock) {
+		if (delta < -deltaThreshold) scrollDownHandler()
+		else if (delta > deltaThreshold) scrolUpHandler()
+  
+		lock(absDelta)
+  
+		clearTimeout(wheelLockTimer)
+		wheelLockTimer = setTimeout(() => {
+		  if (wheelPower !== absDelta) return
+		  unlock()
+		}, 1000)
+	  } else if (absDelta < deltaThreshold && wheelLock) {
+		unlock()
+	  }
+	})
+  
+	function lock(absDelta) {
+	  wheelPower = absDelta
+	  wheelLock = true
+	}
+  
+	function unlock() {
+	  wheelPower = deltaThreshold
+	  wheelLock = false
+	}
+  }
 /*
  * onepagescroll.js v1.0.0
  * Athuor : Mystika
@@ -41,11 +90,24 @@ function changePage(compare,edge,increase){
 	}
 }
 let pages,isPageChanging,currentPage,setting,selector;
+onceWheel(()=>{
+		changePage(pages.length,1,1);},()=>{
+			changePage(1,pages.length,-1);})
 function onScrollEventHandler(e){
-        if(e.wheelDelta > 0)
-        	changePage(1,pages.length,-1);
-        else
-        	changePage(pages.length,1,1);
+	var delta = e.wheelDelta;
+    var timeNow = performance.now();
+	console.log(e)
+	if (delta > 0 && ( scrollingDirection != 1 || timeNow > lastScroll + scrollIdleTime) ) {
+       
+		changePage(1,pages.length,-1);
+        scrollingDirection = 1;
+    } else if (delta < 0 && ( scrollingDirection != 2 || timeNow > lastScroll + scrollIdleTime)) {
+      
+		changePage(pages.length,1,1);
+        scrollingDirection = 2;
+    }
+	
+	
 	}
 function onepagescroll(selector1, options) {
 	pages = [];
@@ -70,7 +132,7 @@ function onepagescroll(selector1, options) {
 	/* initialization */
 	function init(){
 
-		window.addEventListener('wheel',onScrollEventHandler);
+		//window.addEventListener('wheel',onScrollEventHandler);
 
 		css(document.querySelector(selector),{
 			transition: 'transform ' + setting.animationTime + 'ms ' + setting.animationType

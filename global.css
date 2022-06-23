@@ -494,12 +494,13 @@ footer > div {
 .modalpages > div {
   width: calc(200% + 120px);
   display: flex;
+  transform: translateX(15px);
   transition: transform 0.3s;
 }
 
 .modalpage {
   padding: 0 30px;
-  width: calc(50% - 30px);
+  width: calc(50% - 60px);
 }
 
 .roundedbutton {
@@ -518,6 +519,9 @@ footer > div {
 
 input[type=text],
 input[type=password] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 2px solid #4D4D4D;
   border-radius: 5px;
   font-family: "SF";
@@ -699,6 +703,7 @@ label {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    max-height: calc(100vh - 60px);
   }
 }
 /*# sourceMappingURL=global.css.map */

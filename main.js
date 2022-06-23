@@ -98,7 +98,7 @@
   modalbuttons[0].addEventListener("click",()=>{
     if(!modalbuttons[0].classList.contains("active")){
       
-      modalpages.style.transform = "translateX(0)"
+      modalpages.style.transform = "translateX(15px)"
       
       modalbuttons[0].classList.add("active")
       
@@ -108,7 +108,7 @@
   modalbuttons[1].addEventListener("click",()=>{
     if(!modalbuttons[1].classList.contains("active")){
       
-      modalpages.style.transform = "translateX(calc(-50% + 30px))"
+      modalpages.style.transform = "translateX(calc(-50% + 75px))"
       
       modalbuttons[1].classList.add("active")
       
@@ -118,7 +118,7 @@
   modalbuttons[0].addEventListener("touchend",()=>{
     if(!modalbuttons[0].classList.contains("active")){
       
-      modalpages.style.transform = "translateX(0)"
+      modalpages.style.transform = "translateX(15px)"
       
       modalbuttons[0].classList.add("active")
       
@@ -128,7 +128,7 @@
   modalbuttons[1].addEventListener("touchend",()=>{
     if(!modalbuttons[1].classList.contains("active")){
       
-      modalpages.style.transform = "translateX(calc(-50% + 30px))"
+      modalpages.style.transform = "translateX(calc(-50% + 75px))"
       
       modalbuttons[1].classList.add("active")
       
