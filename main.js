@@ -1,4 +1,4 @@
-
+try{
 onepagescroll('.pages',{
     pageContainer: 'section',     
     animationType: 'ease-in-out', 
@@ -85,4 +85,6 @@ modalbuttons[1].onclick = ()=>{
     
     modalbuttons[0].classList.remove("active")
   }
-}
+}}
+catch(err){
+	alert(err);}
