@@ -51,7 +51,7 @@ document.querySelector(".pages").setAttribute("style","transition: transform 700
 let activetab = 0;
 const tabsButtons = document.querySelectorAll(".techtabs p");
 tabsButtons.forEach(elem => {
-  elem..addEventListener("click",()=>{
+  elem.addEventListener("click",()=>{
     const nowIndex = elem.dataset.tabindex
     if(nowIndex !== activetab){
 document.querySelector(".activetab").classList.remove("activetab");
