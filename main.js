@@ -34,10 +34,14 @@
            
         });
       }
+      document.body.classList.add("scroll")
+      
+      document.querySelector(".pages").setAttribute("style","transform: translate3d(0px, 0px, 0px);")
     }
       else{
         
       window.removeEventListener('wheel',onScrollEventHandler);
+      document.body.classList.remove('scroll')
       }
       modalcontainer.classList.toggle("visible")
     }
