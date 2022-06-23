@@ -1,4 +1,6 @@
-  const modalcontainer = document.querySelector(".modalcontainer")
+
+  document.body.classList.add("scroll")
+const modalcontainer = document.querySelector(".modalcontainer")
     document.getElementById("openmodal").addEventListener("click", ()=>{
       modalcontainer.classList.toggle("visible")
     })
