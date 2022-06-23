@@ -214,7 +214,7 @@
   margin-bottom: 20px;
 }
 
-.services div {
+.services > div {
   width: 84px;
   height: 84px;
   margin: 0 7.5px;
@@ -233,6 +233,15 @@
   -ms-flex-direction: column;
   flex-direction: column;
   border-radius: 6px;
+}
+
+.services div div {
+  width: 30px;
+  height: 30px;
+}
+
+.services img {
+  width: 30px;
 }
 
 .services p {
@@ -401,7 +410,7 @@ button.dark:focus {
     margin-left: 0 !important;
   }
 
-  .services div {
+  .services > div {
     margin-top: 7.5px;
     margin-bottom: 7.5px;
   }

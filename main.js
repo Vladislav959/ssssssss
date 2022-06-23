@@ -9,14 +9,10 @@
       direction: 'vertical'        
        
     });
-    let wasSmall = false; 
-    let wasBig = false;
-    
+    let was = true;
     const resizeObserver = new ResizeObserver(entries => {
-      if(entries[0].target.clientHeight < 700 && !wasSmall && entries[0].target.clientWidth < 1000){
-          wasSmall = true;
-          wasBig = false
-          console.log( entries[0].target.clientHeight)
+      if(entries[0].target.clientHeight < 700 && entries[0].target.clientWidth < 1000){
+          was = false;
       window.removeEventListener('wheel',onScrollEventHandler);
           document.body.classList.add("scroll")
           document.querySelector(".pages").setAttribute("style","transform: translate3d(0px, 0px, 0px);")
@@ -26,9 +22,20 @@
     )
     const modalHandler = ()=>{
       if(modalcontainer.classList.contains("visible")){
-        
-      window.addEventListener('wheel',onScrollEventHandler);
+        console.log("sjsjs")
+        if(was){
+        onepagescroll('.pages',{
+          pageContainer: 'section',     
+          animationType: 'ease-in-out', 
+          animationTime: 700,        
+          infinite: false,           
+          pagination: false,             
+          keyboard: false,               
+          direction: 'vertical'        
+           
+        });
       }
+    }
       else{
         
       window.removeEventListener('wheel',onScrollEventHandler);

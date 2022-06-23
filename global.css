@@ -40,6 +40,7 @@ p {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -521,6 +522,8 @@ input[type=password] {
   border-radius: 5px;
   font-family: "SF";
   margin: 4px 0;
+  -webkit-user-select: text;
+  user-select: text;
   font-weight: 500;
   width: 100%;
   transition: border-color 0.3s;
@@ -631,6 +634,10 @@ label {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
+
+  section {
+    height: calc(100% - 18px) !important;
   }
 }
 @media (max-width: 550px) {
