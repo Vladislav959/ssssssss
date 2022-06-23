@@ -30,21 +30,21 @@ try{
     document.getElementById("openmodal").addEventListener("click", ()=>{
       modalcontainer.classList.toggle("visible")
     })
-    document.getElementById("openmodal").addEventListener("focus", ()=>{
+    document.getElementById("openmodal").addEventListener("touchend", ()=>{
       modalcontainer.classList.toggle("visible")
     })
   modalcontainer.querySelector(".modalwall").addEventListener("click", () => {
     modalcontainer.classList.toggle("visible");
   })
   
-  modalcontainer.querySelector(".modalwall").addEventListener("focus", () => {
+  modalcontainer.querySelector(".modalwall").addEventListener("touchend", () => {
     modalcontainer.classList.toggle("visible");
   })
     modalcontainer.querySelector(".cross").addEventListener("click",()=>{
   
       modalcontainer.classList.toggle("visible")
     })
-    modalcontainer.querySelector(".cross").addEventListener("focus",()=>{
+    modalcontainer.querySelector(".cross").addEventListener("touchend",()=>{
   
       modalcontainer.classList.toggle("visible")
     })
@@ -56,7 +56,7 @@ try{
   document.body.classList.toggle('menuactive');
   document.querySelector(".pages").setAttribute("style","transition: transform 700ms ease-in-out 0s;transform:none!important;")
   });
-  menu.addEventListener('focus', () => {
+  menu.addEventListener('touchend', () => {
     
     
     document.querySelector(".pages").classList.toggle('menuactive');
@@ -77,7 +77,7 @@ try{
       activetab = elem.dataset.tabindex;
       }
     })
-    elem.addEventListener("focus",()=>{
+    elem.addEventListener("touchend",()=>{
       const nowIndex = elem.dataset.tabindex
       if(nowIndex !== activetab){
   document.querySelector(".activetab").classList.remove("activetab");
@@ -112,7 +112,7 @@ try{
       modalbuttons[0].classList.remove("active")
     }
   })
-  modalbuttons[0].addEventListener("focus",()=>{
+  modalbuttons[0].addEventListener("touchend",()=>{
     if(!modalbuttons[0].classList.contains("active")){
       
       modalpages.style.transform = "translateX(0)"
@@ -122,7 +122,7 @@ try{
       modalbuttons[1].classList.remove("active")
     }
   })
-  modalbuttons[1].addEventListener("focus",()=>{
+  modalbuttons[1].addEventListener("touchend",()=>{
     if(!modalbuttons[1].classList.contains("active")){
       
       modalpages.style.transform = "translateX(calc(-50% + 30px))"
