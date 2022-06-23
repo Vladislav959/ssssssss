@@ -1,8 +1,5 @@
 
-  
-    
-      if(window.innerHeight >= 700){
-         onepagescroll('.pages',{
+  onepagescroll('.pages',{
       pageContainer: 'section',     
       animationType: 'ease-in-out', 
       animationTime: 700,        
@@ -12,11 +9,23 @@
       direction: 'vertical'        
        
     });
-      } else{
-        document.body.classList.add("scroll")
+    let wasSmall = false; 
+    let wasBig = false;
+    
+    const resizeObserver = new ResizeObserver(entries => {
+      if(entries[0].target.clientHeight < 700 && !wasSmall && entries[0].target.clientWidth < 1000){
+          wasSmall = true;
+          wasBig = false
+          console.log( entries[0].target.clientHeight)
+      window.removeEventListener('wheel',onScrollEventHandler);
+          document.body.classList.add("scroll")
+          document.querySelector(".pages").setAttribute("style","transform: translate3d(0px, 0px, 0px);")
       }
      
+  }
+    )
     
+    resizeObserver.observe(document.body)
     const modalcontainer = document.querySelector(".modalcontainer")
     document.getElementById("openmodal").addEventListener("click", ()=>{
       modalcontainer.classList.toggle("visible")
@@ -123,4 +132,3 @@
       modalbuttons[0].classList.remove("active")
     }
   })
-         

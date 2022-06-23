@@ -632,10 +632,6 @@ label {
     -ms-flex-pack: center;
     justify-content: center;
   }
-
-  section {
-    height: calc(100% - 18px) !important;
-  }
 }
 @media (max-width: 550px) {
   .modalbuttons button:last-of-type, .rolebuttons button:last-of-type {
@@ -675,7 +671,7 @@ label {
     display: none;
   }
 }
-@media (max-height: 880px) and (max-width: 650px) {
+@media (max-height: 700px) and (max-width: 650px) {
   section {
     height: auto !important;
   }
