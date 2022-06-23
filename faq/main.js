@@ -80,3 +80,11 @@ modalbuttons[1].addEventListener("touchend",()=>{
     modalbuttons[0].classList.remove("active")
   }
 })
+
+const inputs = document.querySelectorAll('input[type="text"], input[type="password"]');
+
+inputs.forEach(elem => {
+ elem.addEventListener("touchend", function(event){
+    elem.focus()
+});
+})
