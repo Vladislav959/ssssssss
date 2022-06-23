@@ -1,7 +1,7 @@
 
   
     
-      if(window.innerHeight >= 700 && window.innerWidth >= 1000){
+      if(window.innerHeight >= 700){
          onepagescroll('.pages',{
       pageContainer: 'section',     
       animationType: 'ease-in-out', 
