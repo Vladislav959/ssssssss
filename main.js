@@ -12,6 +12,8 @@
       direction: 'vertical'        
        
     });
+      } else{
+        document.body.classList.add("scroll")
       }
      
     
