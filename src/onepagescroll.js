@@ -11,7 +11,6 @@ window.onceWheel = function onceWheel(scrollDownHandler, scrolUpHandler) {
 		: 'onmousewheel' in document
 		? 'mousewheel'
 		: 'DOMMouseScroll'
-  
 	document.addEventListener(wheelEvent, event => {
 	  const delta = event.wheelDelta !== undefined ? event.wheelDelta : event.deltaY * -1
 	  const absDelta = Math.abs(delta)
@@ -60,6 +59,10 @@ function css(obj,styles){
 	
 }
 function changePage(compare,edge,increase){
+	
+	console.log("hs")
+if(document.documentElement.clientHeight < 750) return;
+	console.log("hs")
 	if(isPageChanging) return;
 
 	if(currentPage==compare){
@@ -90,10 +93,9 @@ function changePage(compare,edge,increase){
 	}
 }
 let pages,isPageChanging,currentPage,setting,selector;
-onceWheel(()=>{
-		changePage(pages.length,1,1);},()=>{
-			changePage(1,pages.length,-1);})
+
 function onScrollEventHandler(e){
+	console.log("hdahsad")
 	var delta = e.wheelDelta;
     var timeNow = performance.now();
 	console.log(e)
@@ -110,6 +112,9 @@ function onScrollEventHandler(e){
 	
 	}
 function onepagescroll(selector1, options) {
+	onceWheel(()=>{
+		changePage(pages.length,1,1);},()=>{
+			changePage(1,pages.length,-1);})
 	pages = [];
 	selector = selector1
 	currentPage = 1;

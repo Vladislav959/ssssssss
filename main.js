@@ -1,28 +1,32 @@
-
-  onepagescroll('.pages',{
-      pageContainer: 'section',     
-      animationType: 'ease-in-out', 
-      animationTime: 700,        
-      infinite: false,           
-      pagination: false,             
-      keyboard: false,               
-      direction: 'vertical'        
-       
-    });
+document.body.scrollTo({top: 0}) 
+  console.log(document.documentElement.clientWidth)
+if(document.documentElement.clientHeight >= 750){
+  
+}
+  
     let was = true;
     const resizeObserver = new ResizeObserver(entries => {
-      if(entries[0].target.clientHeight < 700 && entries[0].target.clientWidth < 1000){
+          console.log(entries[0].target.clientHeight)
+      if(entries[0].target.clientHeight < 750){
           was = false;
+          onceWheel(()=>{
+            },()=>{
+              })
       window.removeEventListener('wheel',onScrollEventHandler);
+      
+      window.removeEventListener('mousewheel',onScrollEventHandler);
+      
+      window.removeEventListener('DOMMouseScroll',onScrollEventHandler);
+      
           document.body.classList.add("scroll")
           document.querySelector(".pages").setAttribute("style","transform: translate3d(0px, 0px, 0px);")
       }
-     
   }
     )
     const modalHandler = ()=>{
       if(modalcontainer.classList.contains("visible")){
         if(was || (window.innerHeight >= 700 && window.innerWidth >= 1000)){
+          console.log("j")
         onepagescroll('.pages',{
           pageContainer: 'section',     
           animationType: 'ease-in-out', 
@@ -40,7 +44,9 @@
     }
       else{
         
-      window.removeEventListener('wheel',onScrollEventHandler);
+      window.removeEventListener('wheel',onScrollEventHandler); window.removeEventListener('mousewheel',onScrollEventHandler);
+      
+      window.removeEventListener('DOMMouseScroll',onScrollEventHandler);
       document.body.classList.remove('scroll')
       }
       modalcontainer.classList.toggle("visible")

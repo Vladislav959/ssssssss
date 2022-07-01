@@ -229,7 +229,7 @@ section {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
 }
 
 section.noalign {
@@ -311,6 +311,10 @@ footer > div {
 .scroll {
   overflow: scroll !important;
   overflow-x: hidden !important;
+}
+.scroll .pages{
+  
+  transform:none!important;
 }
 
 .menuactive {
@@ -425,7 +429,7 @@ footer > div {
   overflow-y: auto;
   opacity: 0;
   width: 100vw;
-  height:100vh;
+  height:100%;
   border-radius: 11px;
   -webkit-transition: opacity 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
   -o-transition: opacity 0.3s cubic-bezier(0.465, 0.183, 0.153, 0.946);
