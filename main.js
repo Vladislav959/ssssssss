@@ -55,9 +55,6 @@ if(document.documentElement.clientHeight >= 750){
     const modalcontainer = document.querySelector(".modalcontainer")
     document.getElementById("openmodal").addEventListener("click", modalHandler)
     document.getElementById("openmodal").addEventListener("touchend", modalHandler)
-  modalcontainer.querySelector(".modalwall").addEventListener("click", modalHandler)
-  
-  modalcontainer.querySelector(".modalwall").addEventListener("touchend", modalHandler)
     modalcontainer.querySelector(".cross").addEventListener("click",modalHandler)
     modalcontainer.querySelector(".cross").addEventListener("touchend",modalHandler)
   const menu = document.querySelector('.mobilemenu > div');
@@ -102,52 +99,4 @@ if(document.documentElement.clientHeight >= 750){
     })
   })
   
-  const modalbuttons = document.querySelectorAll(".modalbuttons button");
-  const modalpages = document.querySelector(".modalpages > div")
-  modalbuttons[0].addEventListener("click",()=>{
-    if(!modalbuttons[0].classList.contains("active")){
-      
-      modalpages.style.transform = "translateX(15px)"
-      
-      modalbuttons[0].classList.add("active")
-      
-      modalbuttons[1].classList.remove("active")
-    }
-  })
-  modalbuttons[1].addEventListener("click",()=>{
-    if(!modalbuttons[1].classList.contains("active")){
-      
-      modalpages.style.transform = "translateX(calc(-50% + 75px))"
-      
-      modalbuttons[1].classList.add("active")
-      
-      modalbuttons[0].classList.remove("active")
-    }
-  })
-  modalbuttons[0].addEventListener("touchend",()=>{
-    if(!modalbuttons[0].classList.contains("active")){
-      
-      modalpages.style.transform = "translateX(15px)"
-      
-      modalbuttons[0].classList.add("active")
-      
-      modalbuttons[1].classList.remove("active")
-    }
-  })
-  modalbuttons[1].addEventListener("touchend",()=>{
-    if(!modalbuttons[1].classList.contains("active")){
-      
-      modalpages.style.transform = "translateX(calc(-50% + 75px))"
-      
-      modalbuttons[1].classList.add("active")
-      
-      modalbuttons[0].classList.remove("active")
-    }
-  })
-  const inputs = document.querySelectorAll('input[type="text"], input[type="password"]');
-
-  inputs.forEach(elem => {
-   elem.addEventListener("touchend", function(event){
-      elem.focus()
-  });
-  })
+  
