@@ -16,7 +16,7 @@
 
     modalcontainer.classList.toggle("visible")
   })
-const menu = document.querySelector('.mobilemenu > div');
+const menu = document.getElementById('mobilemenu');
 menu.addEventListener('click', () => {
   
   
