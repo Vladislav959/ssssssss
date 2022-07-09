@@ -72,7 +72,7 @@ document.querySelector(".pages").setAttribute("style","transform: translate3d(0p
     document.getElementById("openmodal").addEventListener("touchend", modalHandler)
     modalcontainer.querySelector(".cross").addEventListener("click",modalHandler)
     modalcontainer.querySelector(".cross").addEventListener("touchend",modalHandler)
-  const menu = document.querySelector('.mobilemenu > div');
+  const menu = document.getElementById('mobilemenu');
   menu.addEventListener('click', () => {
     
     
