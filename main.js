@@ -1,7 +1,22 @@
 document.body.scrollTo({top: 0}) 
   console.log(document.documentElement.clientWidth)
-if(document.documentElement.clientHeight >= 750){
-  
+if(document.documentElement.clientHeight < 700){
+  document.body.classList.add("scroll")
+} else{
+
+onepagescroll('.pages',{
+          pageContainer: 'section',     
+          animationType: 'ease-in-out', 
+          animationTime: 700,        
+          infinite: false,           
+          pagination: false,             
+          keyboard: false,               
+          direction: 'vertical'        
+           
+        });
+
+document.querySelector(".pages").setAttribute("style","transform: translate3d(0px, 0px, 0px);")
+
 }
   
     let was = true;
@@ -38,7 +53,7 @@ if(document.documentElement.clientHeight >= 750){
            
         });
       }
-      document.body.classList.add("scroll")
+      document.body.classList.remove("scroll")
       
       document.querySelector(".pages").setAttribute("style","transform: translate3d(0px, 0px, 0px);")
     }
@@ -47,7 +62,7 @@ if(document.documentElement.clientHeight >= 750){
       window.removeEventListener('wheel',onScrollEventHandler); window.removeEventListener('mousewheel',onScrollEventHandler);
       
       window.removeEventListener('DOMMouseScroll',onScrollEventHandler);
-      document.body.classList.remove('scroll')
+      document.body.classList.add('scroll')
       }
       modalcontainer.classList.toggle("visible")
     }
